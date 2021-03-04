@@ -1,2 +1,3 @@
-nr indeksu: 248841
-Github pages: Qneds.github.io
+#
+nr indeksu: 248841 
+Github pages: https://qneds.github.io
