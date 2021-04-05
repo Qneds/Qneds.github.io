@@ -5,12 +5,15 @@ var selected_list = null;
 function addItem(){
 
     let list_el = document.getElementById("input_1").value;
-    if (selected_list === null){
+    if (selected_list === null) {
         alert("Żadna lista nie zostałą wybrana");
         return;
     }
+    if (!/\S/.test(list_el)) {
+        return; 
+    }
     let act_list = selected_list.getElementsByClassName("list_div")[0].getElementsByClassName("list-group")[0];
-    if(list_el !== ""){
+    if(list_el !== "") {
         let id_pref  = Date.now();
         document.getElementById("input_1").value = "";
 
@@ -39,29 +42,32 @@ function addItem(){
         // jQuery
         $("#" + id_pref + "_box").append("<button id=\"" + id_pref + "_delete_btn\" class=\"btn btn-danger\">X</button>");
         $("#" + id_pref + "_delete_btn").css({float: "right", height: "100%"});
-        $("#" + id_pref + "_delete_btn").click(function(){
+        $("#" + id_pref + "_delete_btn").click(function() {
             
             let id = $(this).parent().attr("id");
             console.log(id);
             $("#myModal").val(id)
-            $("#myModal").modal("show");
+            $("#myModal").css({display: "block"});
             //$('#myModal').css({display : 'block'}).attr("aria-hidden","false");
         })
     }
 }
 
-$(function(){
-    $("#modal_btn_yes").click(function(){
+$(function() {
+    $("#modal_btn_yes").click(function() {
     
-        if(last_deleted !== null){
+        if(last_deleted !== null) {
             last_deleted.remove();
         }
         let id = $("#myModal").val();
         last_deleted = $("#" + id);
         last_deleted.hide();
-        $("#myModal").modal("hide");
-        //$('#myModal').css({display : 'hide'}).attr("aria-hidden","true");
-    })
+        $("#myModal").css({display: "none"});
+    });
+
+    $("#modal_btn_no").click(function() {
+        $("#myModal").css({display: "none"});
+    });
 })
 
 
@@ -101,14 +107,14 @@ function itemClicked(event){
     }
 }
 
-function undo(){
-    if(last_deleted !== null){
+function undo() {
+    if(last_deleted !== null) {
         last_deleted.show();
         last_deleted = null;
     }
 }
 
-function headerClicked(event){
+function headerClicked(event) {
     let head = event.target;
     let target = head.parentElement.getElementsByClassName("list_div")[0];
     
@@ -124,12 +130,12 @@ function headerClicked(event){
     }
 }
 
-function headerTextClicked(event){
+function headerTextClicked(event) {
     event.target.parentElement.click();
 }
 
 function selectList(event) {
-    if(selected_list !== null){
+    if(selected_list !== null) {
         selected_list.getElementsByClassName("header_of_list_h")[0].style.color = "black";
     }
     selected_list = event.target.parentElement.parentElement;
@@ -139,7 +145,7 @@ function selectList(event) {
 function addList() {
     let hed = document.getElementById("input_1").value;
 
-    if(hed !== ""){
+    if(hed !== "") {
         constructList(hed);
     }
 }
@@ -189,7 +195,7 @@ function constructList(listName) {
 }
 
 
-function searchUpdate(){
+function searchUpdate() {
     let text = document.getElementById("search").value;
     if(document.getElementById("caseSensitve").checked === false){
         text = text.toLowerCase();
