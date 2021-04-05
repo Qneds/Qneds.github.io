@@ -204,7 +204,12 @@ function searchUpdate() {
     
     let collection = document.getElementsByClassName("to_search");
     for(let element of collection) {
-        if(text === "" || element.innerText.includes(text)){
+        let checking = element.innerText;
+
+        if(document.getElementById("caseSensitve").checked === false){
+            checking = checking.toLowerCase();
+        }
+        if(text === "" || checking.includes(text)){
             element.parentNode.style.display = "block";
         } else {
             element.parentNode.style.display = "none";
