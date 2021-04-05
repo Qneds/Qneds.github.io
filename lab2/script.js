@@ -202,7 +202,7 @@ function searchUpdate() {
     }
 
     
-    let collection = document.getElementsByClassName("to_search");
+    let collection = document.getElementsByClassName("list_el_text_div");
     for(let element of collection) {
         let checking = element.innerText;
 

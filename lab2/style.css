@@ -40,7 +40,7 @@
     display: inline-block;
 }
 
-.list_el_text_div .to_search {
+.list_el_text_div {
     background-color: rgb(252, 241, 241);
     margin-bottom: 1%;
     padding: 2%;
