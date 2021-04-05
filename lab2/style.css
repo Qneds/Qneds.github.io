@@ -16,10 +16,6 @@
     opacity: 0.5 !important;
 }
 
-.to_search {
-        
-}
-
 .cont {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -44,7 +40,7 @@
     display: inline-block;
 }
 
-.list_el_text_div {
+.list_el_text_div .to_search {
     background-color: rgb(252, 241, 241);
     margin-bottom: 1%;
     padding: 2%;

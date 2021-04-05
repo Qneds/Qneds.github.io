@@ -6,7 +6,7 @@ function addItem(){
 
     let list_el = document.getElementById("input_1").value;
     if (selected_list === null) {
-        alert("Żadna lista nie zostałą wybrana");
+        alert("Żadna lista nie została wybrana");
         return;
     }
     if (!/\S/.test(list_el)) {
