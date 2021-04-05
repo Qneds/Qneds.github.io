@@ -20,7 +20,7 @@ function addItem(){
         let textNode = document.createTextNode(list_el);
         let node = document.createElement("div");
         node.setAttribute("id", id_pref + "_text_div");
-        node.setAttribute("class", "to_search list_el_text_div");
+        node.setAttribute("class", "list_el_text_div");
         node.appendChild(textNode);
         node.addEventListener("click", itemClicked, false);
 
