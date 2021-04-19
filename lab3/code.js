@@ -108,9 +108,6 @@ class Search extends React.Component {
 
     constructor(props) {
         super(props);
-        this.setState({
-            getStudentsList: props.getStudentsList
-        });
     }
 
     handleDescSearchEntry = (event) => {
