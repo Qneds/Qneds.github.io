@@ -99,17 +99,16 @@ const AddStudentBox = (props) => {
 
 class Search extends React.Component {
 
-    state = {
-        descSearch: "",
-        tagSearch: "",
-        outputList: [],
-        getStudentsList: []
-    }
-
     constructor(props) {
         super(props);
-    }
-
+     
+        this.state = {
+            descSearch: "",
+            tagSearch: "",
+            outputList: [],
+            getStudentsList: this.props.getStudentsList
+        };
+      }
     handleDescSearchEntry = (event) => {
 
     }
@@ -224,7 +223,7 @@ class AddUser extends React.Component {
         return (
             //React.Fragment
             <>
-                <div class="frame">
+                <div>
                     <h2>Dodawanie nowego studenta</h2>
                     <AddStudentBox
                     newNameValue={this.state.newNameValue}
@@ -242,7 +241,7 @@ class AddUser extends React.Component {
                     handleOnTagsChange={this.handleTaggsEntry}
                     />
 
-                <button class="btn btn-primary" onClick={this.addStudent}>Dodaj studenta</button>
+                    <button className="btn btn-primary" onClick={this.addStudent}>Dodaj studenta</button>
                 </div>
 
             </>
