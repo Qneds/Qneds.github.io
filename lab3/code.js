@@ -44,35 +44,54 @@ const NumberOfFoundedStudnets = (props) => {
 
 const AddStudentBox = (props) => {
     return (
-        <div>
-            <h1>Imie:</h1>
-            <input
-            type="text"
-            name="newName"
-            value={props.newNameValue}
-            onChange={props.handleOnNameChange}
-            />
-            <h1>Opis:</h1>
-            <input
-            type="text"
-            name="newDesc"
-            value={props.newDescValue}
-            onChange={props.handleOnDescChange}
-            />
-            <h1>E-mail:</h1>
-            <input
-            type="text"
-            name="newEmail"
-            value={props.newEmailValue}
-            onChange={props.handleOnEmailChange}
-            />
-            <h1>Tagi:</h1>
-            <input
-            type="text"
-            name="newName"
-            value={props.newTagsValue}
-            onChange={props.handleOnTagsChange}
-            />
+        <div class= "frame">
+
+            <div class="container cont">
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm2">Imie:</span>
+                    </div>
+                    <input
+                    type="text"
+                    name="newName"
+                    value={props.newNameValue}
+                    onChange={props.handleOnNameChange}
+                    />
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm2">Opis:</span>
+                    </div>
+                    <input
+                    type="text"
+                    name="newDesc"
+                    value={props.newDescValue}
+                    onChange={props.handleOnDescChange}
+                    />
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm2">Email:</span>
+                    </div>
+                    <input
+                    type="text"
+                    name="newEmail"
+                    value={props.newEmailValue}
+                    onChange={props.handleOnEmailChange}
+                    />
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm2">Tagi:</span>
+                    </div>
+                    <input
+                    type="text"
+                    name="newName"
+                    value={props.newTagsValue}
+                    onChange={props.handleOnTagsChange}
+                    />
+                </div>
+            </div>
         </div>
         
     )
