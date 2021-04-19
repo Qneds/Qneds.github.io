@@ -76,6 +76,44 @@ const AddStudentBox = (props) => {
     )
 }
 
+class Search extends React.Component {
+
+    state = {
+        descSearch = "",
+        tagSearch = "",
+        outputList = []
+    }
+
+    handleDescSearchEntry = (event) => {
+
+    }
+
+    handleTagSearchEntry = (event) => {
+
+    }
+
+    render() {
+        return (
+            //React.Fragment
+            <>
+                 <input
+                    type="text"
+                    name="descSearch"
+                    value={this.state.descSearch}
+                    onChange={this.handleDescSearchEntry}
+                />
+                <input
+                    type="text"
+                    name="tagSearch"
+                    value={this.state.tagSearch}
+                    onChange={this.handleTagSearchEntry}
+                />
+
+            </>
+        );
+    }
+}
+
 
 class AddUser extends React.Component {
 
@@ -125,26 +163,6 @@ class AddUser extends React.Component {
 
 
 
-    handleEnter = (event) => {
-        if(event.code === "Enter"){
-            if(this.state.toDoList.includes(this.state.newItemValue)){
-                this.setState({
-                    showWarning: true
-                });
-            } else {
-                this.setState({
-                    toDoList: this.state.toDoList.concat(this.state.newItemValue),
-                    newItemValue: "",
-                    showWarning: false
-
-                });
-            }
-        } else {
-            this.setState({
-                showWarning: false
-            });
-        }
-    }
     // it => ( )
     render() {
         return (
@@ -156,15 +174,15 @@ class AddUser extends React.Component {
                     onChange={this.handleNameEntry}
 
 
-                    newNameValue={this.state.newDescValue}
+                    newDescValue={this.state.newDescValue}
                     onChange={this.handleDescEntry}
 
 
-                    newNameValue={this.state.newEmailValue}
+                    newEmailValue={this.state.newEmailValue}
                     onChange={this.handleEmailEntry}
   
-                    newNameValue={this.state.newTagsValue}
-                    onChange={this.handleTagsEntry}
+                    newTagsValue={this.state.newTagsValue}
+                    onChange={this.handleTaggsEntry}
                 />
 
                 <button onClick={this.addStudent}>Dodaj studenta</button>
