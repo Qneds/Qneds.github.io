@@ -22,7 +22,7 @@ class Student {
 const StudentBox = (props) => {
     return (
         <li>
-            <div class="list_el_text_div">
+            <div className="list_el_text_div">
                 <ul>
                     <li>{props.name}</li>
                     <li>{props.desc}</li>
@@ -177,7 +177,7 @@ class AddUser extends React.Component {
         newTagsValue: "",
         showWarning: false
     }
-    errorMessage = "Wrong entry value"
+    errorMessage = "Student z danym e-mailem już istnieje."
 
     constructor(props) {
         super(props);
@@ -210,7 +210,23 @@ class AddUser extends React.Component {
 
     addStudent = (event) => {
 
-        this.addStudentToList(new Student(this.state.newNameValue, this.state.newDescValue, this.state.newEmailValue,  this.state.newTagsValue))
+        let student = new Student(this.state.newNameValue, this.state.newDescValue, this.state.newEmailValue,  this.state.newTagsValue)
+        if(this.props.students.includes(student)){
+            this.setState({
+                showWarning: true
+            });
+        } else {
+            this.setState({
+                newNameValue: "",
+                newDescValue: "",
+                newEmailValue: "",
+                newTagsValue: "",
+                showWarning: false
+            });
+            this.addStudentToList(student)
+        }
+
+        
 
     }
 
@@ -238,6 +254,7 @@ class AddUser extends React.Component {
                     newTagsValue={this.state.newTagsValue}
                     handleOnTagsChange={this.handleTaggsEntry}
                     />
+                    {this.state.showWarning && <h1 style={{color: "red"}}>{this.errorMessage}</h1> }
 
                     <button className="btn btn-primary" onClick={this.addStudent}>Dodaj studenta</button>
                 </div>
@@ -251,7 +268,7 @@ class AddUser extends React.Component {
 class Main extends React.Component {
 
     state = {
-        students: [new Student("1", "2", "3", "4")]
+        students: []
     }
 
     addStudent = (student) => {
@@ -270,7 +287,7 @@ class Main extends React.Component {
         return (
             //React.Fragment
             <>
-                <AddUser addStudent={this.addStudent}/>
+                <AddUser addStudent={this.addStudent} students={this.state.students}/>
                 <Search getStudentsList={this.state.students}/>
             </>
         );
