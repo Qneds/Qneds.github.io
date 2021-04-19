@@ -19,16 +19,26 @@ class Student {
     }
   }
 
-const StudentBox = (props) => (
-    <li>
-        <ul>
-            <li>{props.name}</li>
-            <li>{props.desc}</li>
-            <li>{props.email}</li>
-            <li>{props.tags}</li>
-        </ul>
-    </li>
-)
+const StudentBox = (props) => {
+    return (
+        <li>
+            <ul>
+                <li>{props.name}</li>
+                <li>{props.desc}</li>
+                <li>{props.email}</li>
+                <li>{props.tags}</li>
+            </ul>
+        </li>
+    )
+}
+
+const NumberOfFoundedStudnets = (props) => {
+    return (
+        <div>
+            Znaleziono {props.numberOfStudent} studentów
+        </div>
+    )
+}
 
 const AddStudentBox = (props) => {
     return (
@@ -63,7 +73,7 @@ const AddStudentBox = (props) => {
             />
         </div>
         
-)
+    )
 }
 
 
@@ -189,6 +199,7 @@ class Main extends React.Component {
             //React.Fragment
             <>
                 <AddUser addStudent={this.addStudent}/>
+                <NumberOfFoundedStudnets numberOfStudent="1"/>
                 <ul>
                     {myList}
                 </ul>
