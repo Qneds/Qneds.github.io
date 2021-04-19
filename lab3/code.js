@@ -81,6 +81,7 @@ class Search extends React.Component {
     state = {
         descSearch: "",
         tagSearch: "",
+        getStudentsList: [],
         outputList: []
     }
 
@@ -93,6 +94,9 @@ class Search extends React.Component {
     }
 
     render() {
+        const myList = this.state.outputList.map(it => (
+            <StudentBox name={it.name} desc={it.desc} email={it.email} tags={it.tags} key={hashCode(it.email)} />
+        ))
         return (
             //React.Fragment
             <>
@@ -108,6 +112,12 @@ class Search extends React.Component {
                     value={this.state.tagSearch}
                     onChange={this.handleTagSearchEntry}
                 />
+
+                <NumberOfFoundedStudnets numberOfStudent="1"/>
+
+                <ul>
+                    {myList}
+                </ul>
 
             </>
         );
@@ -202,7 +212,7 @@ class Main extends React.Component {
 
     addStudent = (student) => {
         this.setState({
-            students: this.state.students.push(student)
+            students: this.state.students.concat(student)
         });
         
     }
@@ -211,19 +221,13 @@ class Main extends React.Component {
         return this.state.students;
     }
 
-
     render() {
-        const myList = this.state.students.map(it => (
-            <StudentBox name={it.name} desc={it.desc} email={it.email} tags={it.tags} key={hashCode(it.email)} />
-        ))
+
         return (
             //React.Fragment
             <>
                 <AddUser addStudent={this.addStudent}/>
-                <NumberOfFoundedStudnets numberOfStudent="1"/>
-                <ul>
-                    {myList}
-                </ul>
+                <Search getStudentsList={this.state.students}/>
             </>
         );
     }
