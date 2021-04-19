@@ -169,8 +169,8 @@ class Search extends React.Component {
                 let tagsFromSearch = this.state.tagSearch.split(/[\s,]+/);
 
                 var arrayLength = tagsFromSearch.length;
-                for (let i = 0; j < tags.length; i++){
-                    for (let j = 0; i < arrayLength; j++) {
+                for (let i = 0; i < tags.length; i++){
+                    for (let j = 0; j < arrayLength; j++) {
                         if(tags[i].includes(tagsFromSearch[j])){
                             outpuList.push(element);
                             break;
