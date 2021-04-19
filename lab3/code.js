@@ -22,12 +22,14 @@ class Student {
 const StudentBox = (props) => {
     return (
         <li>
-            <ul>
-                <li>{props.name}</li>
-                <li>{props.desc}</li>
-                <li>{props.email}</li>
-                <li>{props.tags}</li>
-            </ul>
+            <div class="list_el_text_div">
+                <ul>
+                    <li>{props.name}</li>
+                    <li>{props.desc}</li>
+                    <li>{props.email}</li>
+                    <li>{props.tags}</li>
+                </ul>
+            </div>
         </li>
     )
 }
@@ -121,7 +123,7 @@ class Search extends React.Component {
                 />
 
 
-                <div>
+                <div class="frame">
                     <div class="container cont">
                         <div class="input-group input-group-sm mb-3">
                             <div class="input-group-prepend">
@@ -140,9 +142,12 @@ class Search extends React.Component {
 
                 <NumberOfFoundedStudnets numberOfStudent="1"/>
 
-                <ul>
-                    {myList}
-                </ul>
+                <div class="frame">
+                    <ul class="list-group">
+                        {myList}
+                    </ul>
+                </div>
+                
 
             </>
         );
@@ -203,8 +208,9 @@ class AddUser extends React.Component {
         return (
             //React.Fragment
             <>
-                <h2>Dodawanie nowego studenta</h2>
-                <AddStudentBox
+                <div class="frame">
+                    <h2>Dodawanie nowego studenta</h2>
+                    <AddStudentBox
                     newNameValue={this.state.newNameValue}
                     handleOnNameChange={this.handleNameEntry}
 
@@ -218,10 +224,10 @@ class AddUser extends React.Component {
   
                     newTagsValue={this.state.newTagsValue}
                     handleOnTagsChange={this.handleTaggsEntry}
-                />
+                    />
 
-                <button onClick={this.addStudent}>Dodaj studenta</button>
-
+                <button class="btn btn-primary" onClick={this.addStudent}>Dodaj studenta</button>
+                </div>
 
             </>
         );
