@@ -110,6 +110,9 @@
     overflow: hidden;
     float: left;
     width: 100px;
+    border-color: rgb(65, 65, 65);
+    border-style: solid;
+    border-radius: 1px;
     overflow-wrap: break-word;
 }
 
