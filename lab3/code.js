@@ -177,10 +177,9 @@ class Search extends React.Component {
                             exit = true;
                             break;
                         }
-
-                        if (exit) {
-                            break;
-                        }
+                    }
+                    if (exit) {
+                        break;
                     }
                 }
             }
