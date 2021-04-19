@@ -241,7 +241,7 @@ class AddUser extends React.Component {
 
         let found = false;
         for(var i = 0; i < this.props.students.length; i++) {
-            if (this.props.students.email === student.email) {
+            if (this.props.students[i].email === student.email) {
                 found = true;
                 break;
             }
