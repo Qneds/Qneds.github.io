@@ -121,6 +121,8 @@ class Search extends React.Component {
         const myList = this.state.getStudentsList.map(it => (
             <StudentBox name={it.name} desc={it.desc} email={it.email} tags={it.tags} key={hashCode(it.email)} />
         ))
+
+
         return (
             //React.Fragment
             <>
@@ -144,13 +146,13 @@ class Search extends React.Component {
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm2">Wyszukuj po opisie</span>
                             </div>
-                            <input type="text" id="searchDesc" class="form-control" aria-label="Small" onInput={this.handleDescSearchEntry} aria-describedby="inputGroup-sizing-sm"/>
+                            <input type="text" name="descSearch" value={this.state.descSearch} id="searchDesc" class="form-control" aria-label="Small" onInput={this.handleDescSearchEntry} aria-describedby="inputGroup-sizing-sm"/>
                         </div>
                         <div class="input-group input-group-sm mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm2">Wyszukuj po tagach</span>
                             </div>
-                            <input type="text" id="searchTags" class="form-control" aria-label="Small" onInput={this.handletagSearchEntry} aria-describedby="inputGroup-sizing-sm"/>
+                            <input type="text" name="tagSearch" value={this.state.tagSearch} id="searchTags" class="form-control" aria-label="Small" onInput={this.handleTagSearchEntry} aria-describedby="inputGroup-sizing-sm"/>
                         </div>
                     </div>
                 </div>
