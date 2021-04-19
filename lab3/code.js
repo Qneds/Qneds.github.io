@@ -197,7 +197,7 @@ class AddUser extends React.Component {
 class Main extends React.Component {
 
     state = {
-        students: []
+        students: [new Student("1", "2", "3", "4")]
     }
 
     addStudent = (student) => {
