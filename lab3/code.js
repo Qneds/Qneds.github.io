@@ -118,10 +118,6 @@ class AddUser extends React.Component {
     }
     // it => ( )
     render() {
-        const myList = this.state.toDoList.map(it => (
-            <Item text={it} key={hashCode(it)} />
-        ))
-
         return (
             //React.Fragment
             <>
@@ -142,10 +138,7 @@ class AddUser extends React.Component {
                     onChange={this.handleTaggsEntry}
                 />
 
-               {this.state.showWarning && <h1 style={{color: "red"}}>{this.errorMessage}</h1> }
-                <ul>
-                    {myList}
-                </ul>
+
             </>
         );
     }
