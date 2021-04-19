@@ -1,0 +1,115 @@
+.fade.in {
+    opacity: 1 !important;
+}
+    
+.modal.in .modal-dialog {
+    -webkit-transform: translate(0, 0) !important;
+    -o-transform: translate(0, 0) !important;
+    transform: translate(0, 0) !important;
+}
+    
+.modal-backdrop .fade .in {
+    opacity: 0.5 !important;
+}
+    
+.modal-backdrop.fade {
+    opacity: 0.5 !important;
+}
+
+.cont {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 50%;
+    border-color: gray;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+.list_div {
+    display: block;
+    margin-bottom: 1%;
+}
+
+.header_of_list_div {
+    overflow-wrap: break-word;
+}
+
+.header_of_list_h {
+    color:black;
+    display: inline-block;
+}
+
+.list_el_text_div {
+    background-color: rgb(252, 241, 241);
+    margin-bottom: 1%;
+    padding: 2%;
+    border-radius: 5%;
+    height: 75%;
+    overflow: hidden;
+    float: left;
+    width: 100%;
+    overflow-wrap: break-word;
+}
+
+.list_el_date_div {
+    background-color: rgb(241, 252, 243);
+    margin-bottom: 1%;
+    padding: 2%;
+    border-radius: 5%;
+    overflow: hidden;
+    width: 88%;
+    height: 100%;
+    float: left;
+    text-decoration: none !important;
+    color: black;
+}
+
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #3e74c4;
+    color: white;
+}
+  
+ 
+.modal-body {padding: 2px 16px;}
+  
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #a3a3a3;
+    color: white;
+}
+  
+
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 30%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+  
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
