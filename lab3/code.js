@@ -30,7 +30,7 @@ const TagBox = (props) => {
 
 const StudentBox = (props) => {
 
-    let tags = this.props.tags.split(",");
+    let tags = props.tags.split(",");
 
     const tagList = tags.map(it => (
         <TagBox tag={it} key={hashCode(it)} />
