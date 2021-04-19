@@ -48,8 +48,12 @@ const StudentBox = (props) => {
                 Kontakt: {props.email}
             </div>
             <div className="tags">
-                Tagi:~{"\n"}
-                {tagList}
+                <div style="{width: 100%;}">
+                    Tagi:
+                </div>
+                <div>
+                    {tagList}
+                </div>
             </div>
         </li>
     )
