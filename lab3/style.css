@@ -105,14 +105,14 @@
 }
 
 .tag {
-    background-color: rgb(42, 116, 158);
+    background-color: rgb(125, 191, 230);
     margin-bottom: 1%;
     padding: 2%;
     border-radius: 5%;
     height: 75%;
     overflow: hidden;
     float: left;
-    width: 30%;
+    width: 70px;
     overflow-wrap: break-word;
 }
 
