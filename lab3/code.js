@@ -44,12 +44,12 @@ const NumberOfFoundedStudnets = (props) => {
 
 const AddStudentBox = (props) => {
     return (
-        <div class= "space">
+        <div className= "space">
 
-            <div class="container cont">
-                <div class="input-group input-group-sm mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-sm2">Imie:</span>
+            <div className="container cont">
+                <div className="input-group input-group-sm mb-3">
+                    <div className="input-group-prepend">
+                        <span className="input-group-text" id="inputGroup-sizing-sm2">Imie:</span>
                     </div>
                     <input
                     type="text"
@@ -58,9 +58,9 @@ const AddStudentBox = (props) => {
                     onChange={props.handleOnNameChange}
                     />
                 </div>
-                <div class="input-group input-group-sm mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-sm2">Opis:</span>
+                <div className="input-group input-group-sm mb-3">
+                    <div className="input-group-prepend">
+                        <span className="input-group-text" id="inputGroup-sizing-sm2">Opis:</span>
                     </div>
                     <input
                     type="text"
@@ -69,9 +69,9 @@ const AddStudentBox = (props) => {
                     onChange={props.handleOnDescChange}
                     />
                 </div>
-                <div class="input-group input-group-sm mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-sm2">Email:</span>
+                <div className="input-group input-group-sm mb-3">
+                    <div className="input-group-prepend">
+                        <span className="input-group-text" id="inputGroup-sizing-sm2">Email:</span>
                     </div>
                     <input
                     type="text"
@@ -80,9 +80,9 @@ const AddStudentBox = (props) => {
                     onChange={props.handleOnEmailChange}
                     />
                 </div>
-                <div class="input-group input-group-sm mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-sm2">Tagi:</span>
+                <div className="input-group input-group-sm mb-3">
+                    <div className="input-group-prepend">
+                        <span className="input-group-text" id="inputGroup-sizing-sm2">Tagi:</span>
                     </div>
                     <input
                     type="text"
@@ -110,17 +110,25 @@ class Search extends React.Component {
         };
       }
     handleDescSearchEntry = (event) => {
-
+        this.setState({
+            descSearch: event.target.value
+        });
     }
 
     handleTagSearchEntry = (event) => {
-
+        this.setState({
+            tagSearch: event.target.value
+        });
     }
 
     render() {
         const myList = this.state.getStudentsList.map(it => (
             <StudentBox name={it.name} desc={it.desc} email={it.email} tags={it.tags} key={hashCode(it.email)} />
         ))
+
+        this.setState({
+            getStudentsList: this.props.getStudentsList
+        });
 
 
         return (
@@ -140,17 +148,17 @@ class Search extends React.Component {
                 />
 
 
-                <div class="frame">
-                    <div class="container cont">
-                        <div class="input-group input-group-sm mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-sm2">Wyszukuj po opisie</span>
+                <div className="frame">
+                    <div className="container cont">
+                        <div className="input-group input-group-sm mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text" id="inputGroup-sizing-sm2">Wyszukuj po opisie</span>
                             </div>
                             <input type="text" name="descSearch" value={this.state.descSearch} id="searchDesc" class="form-control" aria-label="Small" onInput={this.handleDescSearchEntry} aria-describedby="inputGroup-sizing-sm"/>
                         </div>
-                        <div class="input-group input-group-sm mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-sm2">Wyszukuj po tagach</span>
+                        <div className="input-group input-group-sm mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text" id="inputGroup-sizing-sm2">Wyszukuj po tagach</span>
                             </div>
                             <input type="text" name="tagSearch" value={this.state.tagSearch} id="searchTags" class="form-control" aria-label="Small" onInput={this.handleTagSearchEntry} aria-describedby="inputGroup-sizing-sm"/>
                         </div>
@@ -159,8 +167,8 @@ class Search extends React.Component {
 
                 <NumberOfFoundedStudnets numberOfStudent="1"/>
 
-                <div class="frame">
-                    <ul class="list-group">
+                <div className="frame">
+                    <ul className="list-group">
                         {myList}
                     </ul>
                 </div>
@@ -225,7 +233,7 @@ class AddUser extends React.Component {
         return (
             //React.Fragment
             <>
-                <div class="frame">
+                <div className="frame">
                     <h2>Dodawanie nowego studenta</h2>
                     <AddStudentBox
                     newNameValue={this.state.newNameValue}
