@@ -38,16 +38,16 @@ const StudentBox = (props) => {
 
     return (
         <li className="list-group-item">
-            <div>
+            <div className="name">
                 {props.name}
             </div>
-            <div>
+            <div className="desc">
                 {props.desc}
             </div>
-            <div>
+            <div className="email">
                 Kontakt: {props.email}
             </div>
-            <div>
+            <div className="tags">
                 {tagList}
             </div>
         </li>
