@@ -104,6 +104,17 @@
     overflow-wrap: break-word;
 }
 
+.tag {
+    background-color: rgb(42, 116, 158);
+    margin-bottom: 1%;
+    padding: 2%;
+    border-radius: 5%;
+    height: 75%;
+    overflow: hidden;
+    float: left;
+    width: 30%;
+    overflow-wrap: break-word;
+}
 
 .modal {
     display: none; 

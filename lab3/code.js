@@ -17,9 +17,25 @@ class Student {
       this.email = email;
       this.tags = tags;
     }
-  }
+}
+
+const TagBox = (props) => {
+    return (
+        <div className="tag">
+            {props.tag}
+        </div>
+    )
+}
+
 
 const StudentBox = (props) => {
+
+    let tags = this.props.tags.split(",");
+
+    const tagList = tags.map(it => (
+        <TagBox tag={it} key={hashCode(it)} />
+    ));
+
     return (
         <li className="list-group-item">
             <div>
@@ -32,7 +48,7 @@ const StudentBox = (props) => {
                 Kontakt: {props.email}
             </div>
             <div>
-                {props.tags}
+                {tagList}
             </div>
         </li>
     )
