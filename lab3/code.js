@@ -136,9 +136,9 @@ class Search extends React.Component {
 
         for(let element of list) {
 
-            if(this.state.descSearch === "" || element.desc.includes(this.state.descSearch)) {
+            if(element.desc.includes(this.state.descSearch)) {
                 outpuList.push(element);
-            } else if(this.state.tagSearch === "" || element.tags.includes(this.state.tagSearch)) {
+            } else if(element.tags.includes(this.state.tagSearch)) {
                 outpuList.push(element);
             }
         }
@@ -176,7 +176,7 @@ class Search extends React.Component {
                         </div>
                     </div>
                     <div>
-                        <NumberOfFoundedStudnets numberOfStudent={list.length}/>
+                        <NumberOfFoundedStudnets numberOfStudent={out.length}/>
                     </div>
                 </div>
 
