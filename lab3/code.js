@@ -30,7 +30,7 @@ const TagBox = (props) => {
 
 const StudentBox = (props) => {
 
-    let tags = props.tags.split(",");
+    let tags = props.tags.split(/[\s,]+/);
 
     const tagList = tags.map(it => (
         <TagBox tag={it} key={hashCode(it)} />
@@ -158,8 +158,17 @@ class Search extends React.Component {
 
             if(this.state.descSearch !== "" && element.desc.includes(this.state.descSearch)) {
                 outpuList.push(element);
-            } else if(this.state.tagSearch !== "" && element.tags.includes(this.state.tagSearch)) {
-                outpuList.push(element);
+            } else if(this.state.tagSearch !== "") {
+                let tags = element.tags.split(/[\s,]+/);
+
+                for(let el  in tags) {
+                    if(this.state.tagSearch.includes(el)){
+                        outpuList.push(element);
+                        break;
+                    }
+                }
+
+                
             }
         }
 
