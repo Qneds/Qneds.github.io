@@ -48,7 +48,7 @@ const StudentBox = (props) => {
                 Kontakt: {props.email}
             </div>
             <div className="tags">
-                <div style="{width: 100%;}">
+                <div style="width: 100%;">
                     Tagi:
                 </div>
                 <div>
