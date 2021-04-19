@@ -136,9 +136,9 @@ class Search extends React.Component {
 
         for(let element of list) {
 
-            if(element.desc.includes(this.state.descSearch)) {
+            if(this.state.descSearch !== "" && element.desc.includes(this.state.descSearch)) {
                 outpuList.push(element);
-            } else if(element.tags.includes(this.state.tagSearch)) {
+            } else if(this.state.tagSearch !== "" && element.tags.includes(this.state.tagSearch)) {
                 outpuList.push(element);
             }
         }
@@ -241,11 +241,15 @@ class AddUser extends React.Component {
 
         let found = false;
         for(var i = 0; i < this.props.students.length; i++) {
-            if (this.props.students.email === student.name) {
-            found = true;
-            break;
+            if (this.props.students.email === student.email) {
+                found = true;
+                break;
+            }
         }
-}
+
+
+        if(this.state.newNameValue === "" || this.state.newDescValue === "" || this.state.newEmailValue === "" ||  this.state.newTagsValue === "")
+            return;
 
         if(found){
             this.setState({
