@@ -44,7 +44,7 @@ const NumberOfFoundedStudnets = (props) => {
 
 const AddStudentBox = (props) => {
     return (
-        <div class= "frame">
+        <div class= "space">
 
             <div class="container cont">
                 <div class="input-group input-group-sm mb-3">
@@ -223,7 +223,7 @@ class AddUser extends React.Component {
         return (
             //React.Fragment
             <>
-                <div>
+                <div class="frame">
                     <h2>Dodawanie nowego studenta</h2>
                     <AddStudentBox
                     newNameValue={this.state.newNameValue}
