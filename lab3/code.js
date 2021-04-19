@@ -157,7 +157,7 @@ class AddUser extends React.Component {
                     onChange={this.handleTagsEntry}
                 />
 
-                <button>Dodaj studenta</button>
+                <button onClick="addStudent">Dodaj studenta</button>
 
 
             </>
@@ -182,12 +182,16 @@ class Main extends React.Component {
 
 
     render() {
+        const myList = this.state.students.map(it => (
+            <StudentBox name={it.name} desc={it.desc} email={it.email} tags={it.tags} key={hashCode(it.email)} />
+        ))
         return (
             //React.Fragment
             <>
                 <AddUser addStudent={this.addStudent}/>
-
-
+                <ul>
+                    {myList}
+                </ul>
             </>
         );
     }
@@ -195,6 +199,6 @@ class Main extends React.Component {
 
 
 ReactDOM.render(
-    <AddUser/>,
+    <Main/>,
     document.getElementById('root')
 );
