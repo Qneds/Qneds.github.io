@@ -44,14 +44,11 @@
     display: inline-block;
 }
 
-.list_el_text_div {
-    background-color: rgb(252, 241, 241);
-    margin-bottom: 1%;
+.found_el {
+    background-color: rgb(255, 123, 82);
+    margin: 1%;
     padding: 2%;
     border-radius: 5%;
-    height: 75%;
-    overflow: hidden;
-    float: left;
     width: 100%;
     overflow-wrap: break-word;
 }
