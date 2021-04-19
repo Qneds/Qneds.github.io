@@ -94,7 +94,7 @@ class Search extends React.Component {
     }
 
     render() {
-        const myList = this.state.outputList.map(it => (
+        const myList = this.state.getStudentsList.map(it => (
             <StudentBox name={it.name} desc={it.desc} email={it.email} tags={it.tags} key={hashCode(it.email)} />
         ))
         return (
