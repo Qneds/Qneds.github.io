@@ -10,37 +10,91 @@ function hashCode(str) {
     return hash;
 }
 
-const Item = (props) => (
-    <li>{props.text}</li>
+const Student = (props) => (
+    <li>
+        <ul>
+            <li>{props.name}</li>
+            <li>{props.desc}</li>
+            <li>{props.email}</li>
+            <li>{props.tags}</li>
+        </ul>
+    </li>
 )
 
-const Box = (props) => {
+const AddStudentBox = (props) => {
     return (
-        <input
+        <div>
+            <h1>Imie:</h1>
+            <input
             type="text"
-            name="newItemValue"
-            value={props.newItemValue}
-            onChange={props.handleOnChange}
-            onKeyDown={props.handleOnKey}
-        />
+            name="newName"
+            value={props.newNameValue}
+            onChange={props.handleOnNameChange}
+            />
+            <h1>Opis:</h1>
+            <input
+            type="text"
+            name="newDesc"
+            value={props.newDescValue}
+            onChange={props.handleOnDescChange}
+            />
+            <h1>E-mail:</h1>
+            <input
+            type="text"
+            name="newEmail"
+            value={props.newEmailValue}
+            onChange={props.handleOnEmailChange}
+            />
+            <h1>Tagi:</h1>
+            <input
+            type="text"
+            name="newName"
+            value={props.newTagsValue}
+            onChange={props.handleOnTagsChange}
+            />
+        </div>
+        
 )
 }
 
 
-class ToDo extends React.Component {
+class AddUser extends React.Component {
 
     state = {
-        toDoList: ["Zakupy", "Zadanie z PIWa", "Lekarz"],
-        newItemValue: "",
+        students: [],
+        newNameValue: "",
+        newDescValue: "",
+        newEmailValue: "",
+        newTagsValue: "",
         showWarning: false
     }
     errorMessage = "Wrong entry value"
 
-    handleNewEntry = (event) => {
+    handleNameEntry = (event) => {
         this.setState({
-            newItemValue: event.target.value
+            newNameValue: event.target.value
         })
     }
+
+    handleDescEntry = (event) => {
+        this.setState({
+            newDescValue: event.target.value
+        })
+    }
+
+    handleEmailEntry = (event) => {
+        this.setState({
+            newEmailValue: event.target.value
+        })
+    }
+
+    handleTaggsEntry = (event) => {
+        this.setState({
+            newTagsValue: event.target.value
+        })
+    }
+
+
 
     handleEnter = (event) => {
         if(event.code === "Enter"){
@@ -71,11 +125,21 @@ class ToDo extends React.Component {
         return (
             //React.Fragment
             <>
-                <h2>{this.props.dummyText}</h2>
-                <Box
-                    newItemValue={this.state.newItemValue}
-                    handleOnChange={this.handleNewEntry}
-                    handleOnKey={this.handleEnter}
+                <h2>Dodawanie nowego studenta</h2>
+                <AddStudentBox
+                    newNameValue={this.state.newNameValue}
+                    onChange={this.handleNameEntry}
+
+
+                    newNameValue={this.state.newDescValue}
+                    onChange={this.handleDescEntry}
+
+
+                    newNameValue={this.state.newEmailValue}
+                    onChange={this.handleEmailEntry}
+  
+                    newNameValue={this.state.newTagsValue}
+                    onChange={this.handleTaggsEntry}
                 />
 
                {this.state.showWarning && <h1 style={{color: "red"}}>{this.errorMessage}</h1> }
@@ -88,6 +152,6 @@ class ToDo extends React.Component {
 }
 
 ReactDOM.render(
-    <ToDo dummyText="Witaj Dniu" />,
+    <AddUser/>,
     document.getElementById('root')
 );
