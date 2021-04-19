@@ -81,12 +81,15 @@ class Search extends React.Component {
     state = {
         descSearch: "",
         tagSearch: "",
-        outputList: []
+        outputList: [],
+        getStudentsList: []
     }
 
     constructor(props) {
         super(props);
-        this.getStudentsList = props.getStudentsList;
+        this.setState({
+            getStudentsList: props.getStudentsList
+        });
     }
 
     handleDescSearchEntry = (event) => {
@@ -116,6 +119,24 @@ class Search extends React.Component {
                     value={this.state.tagSearch}
                     onChange={this.handleTagSearchEntry}
                 />
+
+
+                <div>
+                    <div class="container cont">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-sm2">Wyszukuj po opisie</span>
+                            </div>
+                            <input type="text" id="searchDesc" class="form-control" aria-label="Small" onInput={this.handleDescSearchEntry} aria-describedby="inputGroup-sizing-sm"/>
+                        </div>
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-sm2">Wyszukuj po tagach</span>
+                            </div>
+                            <input type="text" id="searchTags" class="form-control" aria-label="Small" onInput={this.handletagSearchEntry} aria-describedby="inputGroup-sizing-sm"/>
+                        </div>
+                    </div>
+                </div>
 
                 <NumberOfFoundedStudnets numberOfStudent="1"/>
 
