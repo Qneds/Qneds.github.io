@@ -56,17 +56,52 @@
     overflow-wrap: break-word;
 }
 
-.list_el_date_div {
-    background-color: rgb(241, 252, 243);
+.desc {
+    background-color: rgb(241, 217, 217);
     margin-bottom: 1%;
     padding: 2%;
     border-radius: 5%;
+    height: 75%;
     overflow: hidden;
-    width: 88%;
-    height: 100%;
     float: left;
-    text-decoration: none !important;
-    color: black;
+    width: 100%;
+    overflow-wrap: break-word;
+}
+
+.name {
+    background-color: rgb(252, 255, 217);
+    margin-bottom: 1%;
+    padding: 2%;
+    border-radius: 5%;
+    height: 75%;
+    overflow: hidden;
+    float: left;
+    width: 100%;
+    overflow-wrap: break-word;
+}
+
+.email {
+    background-color: rgb(200, 244, 255);
+    margin-bottom: 1%;
+    padding: 2%;
+    border-radius: 5%;
+    height: 75%;
+    overflow: hidden;
+    float: left;
+    width: 45%;
+    overflow-wrap: break-word;
+}
+
+.tags {
+    background-color: rgb(240, 179, 255);
+    margin-bottom: 1%;
+    padding: 2%;
+    border-radius: 5%;
+    height: 75%;
+    overflow: hidden;
+    float: left;
+    width: 45%;
+    overflow-wrap: break-word;
 }
 
 

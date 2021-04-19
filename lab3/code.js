@@ -21,14 +21,18 @@ class Student {
 
 const StudentBox = (props) => {
     return (
-        <li>
-            <div className="list_el_text_div">
-                <ul>
-                    <li>{props.name}</li>
-                    <li>{props.desc}</li>
-                    <li>{props.email}</li>
-                    <li>{props.tags}</li>
-                </ul>
+        <li className="list-group-item">
+            <div>
+                {props.name}
+            </div>
+            <div>
+                {props.desc}
+            </div>
+            <div>
+                Kontakt: {props.email}
+            </div>
+            <div>
+                {props.tags}
             </div>
         </li>
     )
@@ -291,7 +295,7 @@ class AddUser extends React.Component {
                     newTagsValue={this.state.newTagsValue}
                     handleOnTagsChange={this.handleTaggsEntry}
                     />
-                    {this.state.showWarning && <h1 style={{color: "red"}}>{this.errorMessage}</h1> }
+                    {this.state.showWarning && <h3 style={{color: "red"}}>{this.errorMessage}</h3> }
 
                     <button className="btn btn-primary" onClick={this.addStudent}>Dodaj studenta</button>
                 </div>
