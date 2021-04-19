@@ -106,7 +106,6 @@ class Search extends React.Component {
             descSearch: "",
             tagSearch: "",
             outputList: [],
-            getStudentsList: this.props.getStudentsList
         };
       }
     handleDescSearchEntry = (event) => {
@@ -122,32 +121,13 @@ class Search extends React.Component {
     }
 
     render() {
-        const myList = this.state.getStudentsList.map(it => (
+        const myList = this.props.getStudentsList.map(it => (
             <StudentBox name={it.name} desc={it.desc} email={it.email} tags={it.tags} key={hashCode(it.email)} />
-        ))
-
-        this.setState({
-            getStudentsList: this.props.getStudentsList
-        });
-
+        ));
 
         return (
             //React.Fragment
             <>
-                 <input
-                    type="text"
-                    name="descSearch"
-                    value={this.state.descSearch}
-                    onChange={this.handleDescSearchEntry}
-                />
-                <input
-                    type="text"
-                    name="tagSearch"
-                    value={this.state.tagSearch}
-                    onChange={this.handleTagSearchEntry}
-                />
-
-
                 <div className="frame">
                     <div className="container cont">
                         <div className="input-group input-group-sm mb-3">
