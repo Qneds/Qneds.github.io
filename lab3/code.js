@@ -113,7 +113,6 @@ class Search extends React.Component {
         this.state = {
             descSearch: "",
             tagSearch: "",
-            outputList: [],
         };
       }
     handleDescSearchEntry = (event) => {
@@ -128,8 +127,33 @@ class Search extends React.Component {
         });
     }
 
+    searchUpdate(list) {
+
+        let outpuList = [];
+
+        if(this.state.descSearch === "" && this.state.tagSearch === "")
+            return list;
+
+        for(let element of list) {
+
+            if(element.desc.includes(this.state.descSearch)) {
+                outpuList.push(element);
+            } else if(element.tags.includes(this.state.tagSearch)) {
+                outpuList.push(element);
+            }
+        }
+
+        return outpuList;
+    }
+
     render() {
-        const myList = this.props.getStudentsList.map(it => (
+
+        let list = this.props.getStudentsList;
+
+
+        let out = this.searchUpdate(list);
+
+        const myList = out.map(it => (
             <StudentBox name={it.name} desc={it.desc} email={it.email} tags={it.tags} key={hashCode(it.email)} />
         ));
 
@@ -151,9 +175,12 @@ class Search extends React.Component {
                             <input type="text" name="tagSearch" value={this.state.tagSearch} id="searchTags" className="form-control" aria-label="Small" onInput={this.handleTagSearchEntry} aria-describedby="inputGroup-sizing-sm"/>
                         </div>
                     </div>
+                    <div>
+                        <NumberOfFoundedStudnets numberOfStudent={list.length}/>
+                    </div>
                 </div>
 
-                <NumberOfFoundedStudnets numberOfStudent="1"/>
+                
 
                 <div className="frame">
                     <ul className="list-group">
@@ -225,9 +252,6 @@ class AddUser extends React.Component {
             });
             this.addStudentToList(student)
         }
-
-        
-
     }
 
 
