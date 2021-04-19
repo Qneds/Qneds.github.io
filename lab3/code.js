@@ -79,9 +79,9 @@ const AddStudentBox = (props) => {
 class Search extends React.Component {
 
     state = {
-        descSearch = "",
-        tagSearch = "",
-        outputList = []
+        descSearch: "",
+        tagSearch: "",
+        outputList: []
     }
 
     handleDescSearchEntry = (event) => {
