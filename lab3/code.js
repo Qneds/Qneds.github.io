@@ -202,8 +202,8 @@ class Main extends React.Component {
 
     addStudent = (student) => {
         setState({
-            students: this.state.students.push(student);
-        })
+            students: this.state.students.push(student)
+        });
         
     }
 
