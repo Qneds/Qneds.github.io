@@ -48,6 +48,7 @@ const StudentBox = (props) => {
                 Kontakt: {props.email}
             </div>
             <div className="tags">
+                Tagi:~{"\n"}
                 {tagList}
             </div>
         </li>
@@ -162,7 +163,7 @@ class Search extends React.Component {
                 let tags = element.tags.split(/[\s,]+/);
 
                 for(let el  in tags) {
-                    if(this.state.tagSearch.includes(el)){
+                    if(this.state.tagSearch.includes(tags[el])){
                         outpuList.push(element);
                         break;
                     }
