@@ -10,7 +10,16 @@ function hashCode(str) {
     return hash;
 }
 
-const Student = (props) => (
+class Student {
+    constructor(name, desc, email, tags) {
+      this.name = name;
+      this.desc = desc;
+      this.email = email;
+      this.tags = tags;
+    }
+  }
+
+const StudentBox = (props) => (
     <li>
         <ul>
             <li>{props.name}</li>
@@ -61,7 +70,6 @@ const AddStudentBox = (props) => {
 class AddUser extends React.Component {
 
     state = {
-        students: [],
         newNameValue: "",
         newDescValue: "",
         newEmailValue: "",
@@ -70,28 +78,39 @@ class AddUser extends React.Component {
     }
     errorMessage = "Wrong entry value"
 
+    constructor(props) {
+        super(props);
+        this.addStudentToList = props.addStudent;
+    }
+
     handleNameEntry = (event) => {
         this.setState({
             newNameValue: event.target.value
-        })
+        });
     }
 
     handleDescEntry = (event) => {
         this.setState({
             newDescValue: event.target.value
-        })
+        });
     }
 
     handleEmailEntry = (event) => {
         this.setState({
             newEmailValue: event.target.value
-        })
+        });
     }
 
     handleTaggsEntry = (event) => {
         this.setState({
             newTagsValue: event.target.value
-        })
+        });
+    }
+
+    addStudent = (event) => {
+
+        this.addStudentToList(new Student(this.state.newNameValue, this.state.newDescValue, this.state.newEmailValue,  this.state.newTagsValue))
+
     }
 
 
@@ -101,19 +120,19 @@ class AddUser extends React.Component {
             if(this.state.toDoList.includes(this.state.newItemValue)){
                 this.setState({
                     showWarning: true
-                })
+                });
             } else {
                 this.setState({
                     toDoList: this.state.toDoList.concat(this.state.newItemValue),
                     newItemValue: "",
                     showWarning: false
 
-                })
+                });
             }
         } else {
             this.setState({
                 showWarning: false
-            })
+            });
         }
     }
     // it => ( )
@@ -135,14 +154,45 @@ class AddUser extends React.Component {
                     onChange={this.handleEmailEntry}
   
                     newNameValue={this.state.newTagsValue}
-                    onChange={this.handleTaggsEntry}
+                    onChange={this.handleTagsEntry}
                 />
+
+                <button>Dodaj studenta</button>
 
 
             </>
         );
     }
 }
+
+
+class Main extends React.Component {
+
+    state = {
+        students: []
+    }
+
+    addStudent = (student) => {
+        this.state.students.push(student);
+    }
+
+    getStudentsList = () => {
+        return this.state.students;
+    }
+
+
+    render() {
+        return (
+            //React.Fragment
+            <>
+                <AddUser addStudent={this.addStudent}/>
+
+
+            </>
+        );
+    }
+}
+
 
 ReactDOM.render(
     <AddUser/>,
