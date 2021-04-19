@@ -48,7 +48,7 @@ const StudentBox = (props) => {
                 Kontakt: {props.email}
             </div>
             <div className="tags">
-                <div style="width: 100%;">
+                <div style={{"width" : "100%"}}>
                     Tagi:
                 </div>
                 <div>
@@ -357,8 +357,14 @@ class Main extends React.Component {
         return (
             //React.Fragment
             <>
-                <AddUser addStudent={this.addStudent} students={this.state.students}/>
-                <Search getStudentsList={this.state.students}/>
+                <div className="myFloat">
+                    <Search getStudentsList={this.state.students}/>
+                </div>
+                <div className="myFloat">
+                    <AddUser addStudent={this.addStudent} students={this.state.students}/>
+                </div>
+                
+                
             </>
         );
     }
