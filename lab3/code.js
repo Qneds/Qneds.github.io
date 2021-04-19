@@ -167,7 +167,7 @@ class AddUser extends React.Component {
                     onChange={this.handleTagsEntry}
                 />
 
-                <button onClick="addStudent">Dodaj studenta</button>
+                <button onClick={this.addStudent}>Dodaj studenta</button>
 
 
             </>
