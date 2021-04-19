@@ -54,6 +54,8 @@ const AddStudentBox = (props) => {
                     <input
                     type="text"
                     name="newName"
+                    className="form-control" 
+                    aria-label="Small"
                     value={props.newNameValue}
                     onChange={props.handleOnNameChange}
                     />
@@ -65,6 +67,8 @@ const AddStudentBox = (props) => {
                     <input
                     type="text"
                     name="newDesc"
+                    className="form-control" 
+                    aria-label="Small"
                     value={props.newDescValue}
                     onChange={props.handleOnDescChange}
                     />
@@ -76,6 +80,8 @@ const AddStudentBox = (props) => {
                     <input
                     type="text"
                     name="newEmail"
+                    className="form-control" 
+                    aria-label="Small"
                     value={props.newEmailValue}
                     onChange={props.handleOnEmailChange}
                     />
@@ -87,6 +93,8 @@ const AddStudentBox = (props) => {
                     <input
                     type="text"
                     name="newName"
+                    className="form-control"
+                    aria-label="Small"
                     value={props.newTagsValue}
                     onChange={props.handleOnTagsChange}
                     />
@@ -134,13 +142,13 @@ class Search extends React.Component {
                             <div className="input-group-prepend">
                                 <span className="input-group-text" id="inputGroup-sizing-sm2">Wyszukuj po opisie</span>
                             </div>
-                            <input type="text" name="descSearch" value={this.state.descSearch} id="searchDesc" class="form-control" aria-label="Small" onInput={this.handleDescSearchEntry} aria-describedby="inputGroup-sizing-sm"/>
+                            <input type="text" name="descSearch" value={this.state.descSearch} id="searchDesc" className="form-control" aria-label="Small" onInput={this.handleDescSearchEntry} aria-describedby="inputGroup-sizing-sm"/>
                         </div>
                         <div className="input-group input-group-sm mb-3">
                             <div className="input-group-prepend">
                                 <span className="input-group-text" id="inputGroup-sizing-sm2">Wyszukuj po tagach</span>
                             </div>
-                            <input type="text" name="tagSearch" value={this.state.tagSearch} id="searchTags" class="form-control" aria-label="Small" onInput={this.handleTagSearchEntry} aria-describedby="inputGroup-sizing-sm"/>
+                            <input type="text" name="tagSearch" value={this.state.tagSearch} id="searchTags" className="form-control" aria-label="Small" onInput={this.handleTagSearchEntry} aria-describedby="inputGroup-sizing-sm"/>
                         </div>
                     </div>
                 </div>
