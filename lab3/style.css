@@ -19,7 +19,7 @@
 .frame {
     margin: 10px;
     padding: 10px;
-    width: 100%;
+    width: 90%;
     border-color: gray;
     border-style: solid;
     border-radius: 5px;
@@ -136,6 +136,7 @@
 }
   
 .myFloat {
+    width: 45%;
     overflow: hidden;
     float: left;
 }
