@@ -88,7 +88,7 @@
     height: 75%;
     overflow: hidden;
     float: left;
-    width: 45%;
+    width: 100%;
     overflow-wrap: break-word;
 }
 
@@ -100,19 +100,19 @@
     height: 75%;
     overflow: hidden;
     float: left;
-    width: 45%;
+    width: 100%;
     overflow-wrap: break-word;
 }
 
 .tag {
-    background-color: rgb(125, 191, 230);
-    margin-bottom: 1%;
+    background-color: rgb(161, 212, 241);
+    margin: 2%;
     padding: 2%;
     border-radius: 5%;
     height: 75%;
     overflow: hidden;
     float: left;
-    width: 70px;
+    width: 100px;
     overflow-wrap: break-word;
 }
 
