@@ -171,18 +171,18 @@ class AddUser extends React.Component {
                 <h2>Dodawanie nowego studenta</h2>
                 <AddStudentBox
                     newNameValue={this.state.newNameValue}
-                    onChange={this.handleNameEntry}
+                    handleOnNameChange={this.handleNameEntry}
 
 
                     newDescValue={this.state.newDescValue}
-                    onChange={this.handleDescEntry}
+                    handleOnDescChange={this.handleDescEntry}
 
 
                     newEmailValue={this.state.newEmailValue}
-                    onChange={this.handleEmailEntry}
+                    handleOnEmailChange={this.handleEmailEntry}
   
                     newTagsValue={this.state.newTagsValue}
-                    onChange={this.handleTaggsEntry}
+                    handleOnTagsChange={this.handleTaggsEntry}
                 />
 
                 <button onClick={this.addStudent}>Dodaj studenta</button>
