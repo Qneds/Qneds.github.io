@@ -170,9 +170,15 @@ class Search extends React.Component {
 
                 var arrayLength = tagsFromSearch.length;
                 for (let i = 0; i < tags.length; i++){
+                    let exit = false;
                     for (let j = 0; j < arrayLength; j++) {
                         if(tags[i].includes(tagsFromSearch[j])){
                             outpuList.push(element);
+                            exit = true;
+                            break;
+                        }
+
+                        if (exit) {
                             break;
                         }
                     }
