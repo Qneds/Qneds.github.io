@@ -131,7 +131,7 @@ class EditGroup extends Component {
             });
         } else {
     
-            let path = window.location.hostname + ":" + window.location.port + "/editGroup?id=" + this.state.id;
+            let path = window.location.protocol + "://" + window.location.hostname + ":" + window.location.port + "/editGroup?id=" + this.state.id;
 
             emailjs.send(
                 Data.SERVICE_ID, Data.TEMPLATE_ID_GROUP,

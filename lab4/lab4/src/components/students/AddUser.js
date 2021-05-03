@@ -69,7 +69,7 @@ class AddUser extends Component {
                 showWarning: true
             });
         } else {
-            let path = window.location.hostname + ":" + window.location.port + "/editStudent?id=" + students.length
+            let path = window.location.protocol + "://" + window.location.hostname + ":" + window.location.port + "/editStudent?id=" + students.length
 
             emailjs.send(
                 Data.SERVICE_ID, Data.TEMPLATE_ID_STUDENT,
