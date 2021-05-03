@@ -1,3 +1,4 @@
+"use strict";
 import { React, Component } from 'react';
 
 class AddMember extends Component {
@@ -8,7 +9,7 @@ class AddMember extends Component {
         showWarning: false
     }
 
-    errorMessage = "Członek z danym e-mailem i imieniem już istnieje."
+    errorMessage = "Członek z danym e-mailem i imieniem już istnieje.";
 
     handleNameEntry = (event) => {
         this.setState({
@@ -111,7 +112,7 @@ const AddMemberBox = (props) => {
             </div>
         </div>
         
-    )
+    );
 }
 
 export default AddMember;

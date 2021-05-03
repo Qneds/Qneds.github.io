@@ -1,6 +1,7 @@
+"use strict";
 import { React, Component } from 'react';
 
-import {AddGroupBox, NumberOfMembers} from './Support';
+import {AddGroupBox} from './Support';
 
 import AddMember from './AddMember';
 import MemberSearch from './MemberSearch';
@@ -114,7 +115,6 @@ class AddGroup extends Component {
 
     removeMemberFromList = (name, email) => {
         let obj = {name: name, email: email};
-        debugger
         let array = this.state.members;
 
         const index = array.findIndex(o => o.name === obj.name && o.email === obj.email );
@@ -124,7 +124,7 @@ class AddGroup extends Component {
 
         this.setState({
             members: array
-        })
+        });
 
     }
 

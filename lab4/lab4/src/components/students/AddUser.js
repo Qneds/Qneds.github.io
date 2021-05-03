@@ -1,3 +1,5 @@
+"use strict";
+
 import { React, Component } from 'react';
 import {Student, AddStudentBox} from './Support';
 
@@ -16,7 +18,7 @@ class AddUser extends Component {
         newTagsValue: "",
         showWarning: false
     }
-    errorMessage = "Student z danym e-mailem już istnieje lub email jest nipoprawny."
+    errorMessage = "Student z danym e-mailem już istnieje lub email jest nipoprawny.";
 
     constructor(props) {
         super(props);
@@ -49,7 +51,7 @@ class AddUser extends Component {
 
     addStudent = (event) => {
 
-        let student = new Student(this.state.newNameValue, this.state.newDescValue, this.state.newEmailValue,  this.state.newTagsValue)
+        let student = new Student(this.state.newNameValue, this.state.newDescValue, this.state.newEmailValue,  this.state.newTagsValue);
 
         if(this.state.newNameValue === "" || this.state.newDescValue === "" || this.state.newEmailValue === "" ||  this.state.newTagsValue === "")
             return;

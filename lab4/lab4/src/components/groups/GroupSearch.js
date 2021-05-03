@@ -1,6 +1,7 @@
+"use strict";
 import { React, Component } from 'react';
 
-import {hashCode, NumberOfGroups, GroupBox} from './Support'
+import {hashCode, NumberOfGroups, GroupBox} from './Support';
 
 class GroupSearch extends Component {
 

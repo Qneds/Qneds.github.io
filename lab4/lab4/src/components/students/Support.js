@@ -1,3 +1,5 @@
+"use strict";
+
 import { React, Component } from 'react';
 
 import '../../styles/styleStudents.css';
@@ -27,7 +29,7 @@ export const TagBox = (props) => {
         <div className="tag">
             {props.tag}
         </div>
-    )
+    );
 }
 
 
@@ -59,7 +61,7 @@ export const StudentBox = (props) => {
                 </div>
             </div>
         </li>
-    )
+    );
 }
 
 export const NumberOfFoundedStudnets = (props) => {
@@ -67,7 +69,7 @@ export const NumberOfFoundedStudnets = (props) => {
         <div className="found_el">
             Znaleziono {props.numberOfStudent} studentów
         </div>
-    )
+    );
 }
 
 export const AddStudentBox = (props) => {
@@ -130,5 +132,5 @@ export const AddStudentBox = (props) => {
             </div>
         </div>
         
-    )
+    );
 }

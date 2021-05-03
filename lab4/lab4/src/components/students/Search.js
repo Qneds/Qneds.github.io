@@ -1,3 +1,5 @@
+"use strict";
+
 import { React, Component } from 'react';
 import {StudentBox, hashCode, NumberOfFoundedStudnets} from './Support';
 

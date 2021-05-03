@@ -20,7 +20,7 @@ class Main extends Component {
     state = {
         students: [],
         groups: []
-    }
+    };
 
     addStudent = (student) => {
         //this.setState({

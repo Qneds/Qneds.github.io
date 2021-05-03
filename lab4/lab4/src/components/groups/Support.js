@@ -1,7 +1,8 @@
+"use strict";
 import { React, Component } from 'react';
 import {TagBox} from '../students/Support';
 
-import '../../styles/styleGroups.css'
+import '../../styles/styleGroups.css';
 
 export function hashCode(str) {
     let hash = 0;
@@ -75,7 +76,7 @@ export const AddGroupBox = (props) => {
             </div>
         </div>
         
-    )
+    );
 }
 
 export const NumberOfMembers = (props) => {
@@ -83,7 +84,7 @@ export const NumberOfMembers = (props) => {
         <div className="found_el">
             Znaleziono {props.amountOfMembers} członków
         </div>
-    )
+    );
 }
 
 export const NumberOfGroups = (props) => {
@@ -91,7 +92,7 @@ export const NumberOfGroups = (props) => {
         <div className="found_el">
             Znaleziono {props.amountOfGroups} grup
         </div>
-    )
+    );
 }
 
 export const MemberBox = (props) => {
@@ -105,7 +106,7 @@ export const MemberBox = (props) => {
             </div>
             <button className="btn btn-danger" onClick={() => props.removeMember(props.name, props.email)}>Usuń członka</button>
         </li>
-    )
+    );
 }
 
 const SmallMemberBox = (props) => {
@@ -120,7 +121,7 @@ const SmallMemberBox = (props) => {
                 </div>
             </div>
         </li>
-    )
+    );
 }
 
 export const GroupBox = (props) => {
@@ -164,5 +165,5 @@ export const GroupBox = (props) => {
                 </div>
             </div>
         </li>
-    )
+    );
 }

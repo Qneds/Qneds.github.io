@@ -1,3 +1,4 @@
+"use strict";
 import { React, Component } from 'react';
 
 import {AddGroupBox, NumberOfMembers} from './Support';
@@ -20,7 +21,7 @@ class EditGroup extends Component {
         members: [],
         id: -1
     }
-    errorMessage = "Grupa z danym e-mailem i nazwą już istnieje lub email jest niepoprawny."
+    errorMessage = "Grupa z danym e-mailem i nazwą już istnieje lub email jest niepoprawny.";
 
     constructor(props) {
         super(props);
@@ -157,7 +158,6 @@ class EditGroup extends Component {
 
     removeMemberFromList = (name, email) => {
         let obj = {name: name, email: email};
-        debugger
         let array = this.state.members;
 
         const index = array.findIndex(o => o.name === obj.name && o.email === obj.email );
@@ -167,7 +167,7 @@ class EditGroup extends Component {
 
         this.setState({
             members: array
-        })
+        });
 
     }
 
@@ -211,7 +211,7 @@ class EditGroup extends Component {
                 <>
                 <h2>Nie znaleziono grupy.</h2>
                 </>
-            )
+            );
         }
     }
 }

@@ -1,6 +1,7 @@
+"use strict";
 import { React, Component } from 'react';
 
-import {MemberBox, NumberOfMembers, hashCode} from './Support'
+import {MemberBox, NumberOfMembers, hashCode} from './Support';
 
 class MemberSearch extends Component {
 

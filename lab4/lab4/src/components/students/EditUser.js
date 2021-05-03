@@ -1,3 +1,5 @@
+"use strict";
+
 import { React, Component } from 'react';
 import {Student, AddStudentBox} from './Support';
 
@@ -18,7 +20,7 @@ class EditUser extends Component {
         prevEmail: "",
         id: -1
     }
-    errorMessage = "Student z danym e-mailem i imieniem już istnieje lub email jest niepoprawny."
+    errorMessage = "Student z danym e-mailem i imieniem już istnieje lub email jest niepoprawny.";
 
     constructor(props) {
         super(props);
@@ -39,7 +41,7 @@ class EditUser extends Component {
             id: -1
         }
 
-        let students = this.props.students()
+        let students = this.props.students();
         let id = -1;
         debugger
         for(let i of paramV){
@@ -59,7 +61,7 @@ class EditUser extends Component {
                 prevEmail: students[id].email,
                 showWarning: false,
                 id: id
-            }
+            };
         }
         
     }
@@ -91,7 +93,7 @@ class EditUser extends Component {
     
     saveStudent = (event) => {
 
-        let student = new Student(this.state.newNameValue, this.state.newDescValue, this.state.newEmailValue,  this.state.newTagsValue)
+        let student = new Student(this.state.newNameValue, this.state.newDescValue, this.state.newEmailValue,  this.state.newTagsValue);
 
         if(this.state.newNameValue === "" || this.state.newDescValue === "" || this.state.newEmailValue === "" ||  this.state.newTagsValue === "")
             return;
@@ -177,7 +179,7 @@ class EditUser extends Component {
                 <>
                 <h2>Nie znaleziono studenta.</h2>
                 </>
-            )
+            );
         }
     }
 }
