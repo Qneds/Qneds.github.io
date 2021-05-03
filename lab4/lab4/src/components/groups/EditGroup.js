@@ -1,7 +1,7 @@
 "use strict";
 import { React, Component } from 'react';
 
-import {AddGroupBox, NumberOfMembers} from './Support';
+import {AddGroupBox} from './Support';
 
 import AddMember from './AddMember';
 import MemberSearch from './MemberSearch';
