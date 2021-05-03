@@ -1,0 +1,27 @@
+.small-member-name {
+    background-color: rgb(252, 255, 217);
+    margin: auto;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+    padding: 2%;
+    border-radius: 5px;
+    height: 75%;
+    overflow: hidden;
+    float: left;
+    width: 45%;
+    overflow-wrap: break-word;
+}
+
+.small-member-email {
+    background-color: rgb(200, 244, 255);
+    margin: auto;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+    padding: 2%;
+    border-radius: 5px;
+    height: 75%;
+    overflow: hidden;
+    float: left;
+    width: 45%;
+    overflow-wrap: break-word;
+}
