@@ -85,7 +85,12 @@ class AddGroup extends Component {
                 showWarning: true
             });
         } else {
-            let path = window.location.protocol + "://" + window.location.hostname + ":" + window.location.port + "/editGroup?id=" + groups.length
+
+            let dots = "";
+            if(window.location.port !== undefined){
+                dots = ":"
+            }
+            let path = window.location.protocol + "//" + window.location.hostname + dots + window.location.port + "/editGroup?id=" + groups.length
 
             emailjs.send(
                 Data.SERVICE_ID, Data.TEMPLATE_ID_GROUP,

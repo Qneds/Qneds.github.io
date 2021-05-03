@@ -117,7 +117,12 @@ class EditUser extends Component {
                 showWarning: true
             });
         } else {
-            let path = window.location.protocol + "://" + window.location.hostname + ":" + window.location.port + "/editStudent?id=" + this.state.id;
+
+            let dots = "";
+            if(window.location.port !== undefined){
+                dots = ":"
+            }
+            let path = window.location.protocol + "//" + window.location.hostname + dots + window.location.port + "/editStudent?id=" + this.state.id;
 
             emailjs.send(
                 Data.SERVICE_ID, Data.TEMPLATE_ID_STUDENT,
