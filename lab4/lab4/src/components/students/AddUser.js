@@ -72,7 +72,7 @@ class AddUser extends Component {
             });
         } else {
             let dots = "";
-            if(window.location.port !== undefined){
+            if(window.location.port !== ""){
                 dots = ":"
             }
 

@@ -134,7 +134,7 @@ class EditGroup extends Component {
 
 
             let dots = "";
-            if(window.location.port !== undefined){
+            if(window.location.port !== ""){
                 dots = ":"
             }
     

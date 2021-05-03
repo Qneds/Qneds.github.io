@@ -119,7 +119,7 @@ class EditUser extends Component {
         } else {
 
             let dots = "";
-            if(window.location.port !== undefined){
+            if(window.location.port !== ""){
                 dots = ":"
             }
             let path = window.location.protocol + "//" + window.location.hostname + dots + window.location.port + "/editStudent?id=" + this.state.id;

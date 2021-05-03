@@ -87,7 +87,7 @@ class AddGroup extends Component {
         } else {
 
             let dots = "";
-            if(window.location.port !== undefined){
+            if(window.location.port !== ""){
                 dots = ":"
             }
             let path = window.location.protocol + "//" + window.location.hostname + dots + window.location.port + "/editGroup?id=" + groups.length
