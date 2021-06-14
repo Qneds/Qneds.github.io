@@ -46,8 +46,13 @@ const MainPage = () => {
                             <NavLink to="/main-page/borrowed" exact className="btn btn-primary center-btn menu-buttons active">Aktualnie wypożyczane</NavLink>
                             <NavLink to="/main-page/history" exact className="btn btn-primary center-btn menu-buttons active">Historia</NavLink>
                             <a href="/" className="btn btn-primary center-btn menu-buttons active" onClick={logout}>Wyloguj</a> 
+                            <div className="logged-data bg-info">
+                                Zalogowany: {user.displayName}
+                            </div>
                         </div>
+                        
                     </div>
+                    
                 </div>
             </>
         );
