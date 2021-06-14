@@ -2,5 +2,5 @@
 Bartosz Panuś   
 nr indeksu: 248841  
 Github pages: https://qneds.github.io  
-Notka do lab4:  
+Notka do lab5:  
 Dane są zapisywane w localStorage, aby można było wysyłać maile do edycji tych danych.

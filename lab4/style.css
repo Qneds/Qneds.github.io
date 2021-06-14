@@ -16,14 +16,18 @@
     opacity: 0.5 !important;
 }
 
-.cont {
-    margin-top: 10px;
-    margin-bottom: 10px;
+.frame {
+    margin: 10px;
     padding: 10px;
-    width: 50%;
+    width: 90%;
     border-color: gray;
     border-style: solid;
     border-radius: 5px;
+}
+
+.space {
+    margin: 10px;
+    padding: 10px;
 }
 
 .list_div {
@@ -40,9 +44,18 @@
     display: inline-block;
 }
 
-.list_el_text_div {
-    background-color: rgb(252, 241, 241);
-    margin-bottom: 1%;
+.found_el {
+    background-color: rgb(255, 123, 82);
+    margin: 1%;
+    padding: 2%;
+    border-radius: 5%;
+    width: 100%;
+    overflow-wrap: break-word;
+}
+
+.desc {
+    background-color: rgb(241, 217, 217);
+    margin: 1%;
     padding: 2%;
     border-radius: 5%;
     height: 75%;
@@ -52,19 +65,56 @@
     overflow-wrap: break-word;
 }
 
-.list_el_date_div {
-    background-color: rgb(241, 252, 243);
-    margin-bottom: 1%;
+.name {
+    background-color: rgb(252, 255, 217);
+    margin: 1%;
     padding: 2%;
     border-radius: 5%;
+    height: 75%;
     overflow: hidden;
-    width: 88%;
-    height: 100%;
     float: left;
-    text-decoration: none !important;
-    color: black;
+    width: 100%;
+    overflow-wrap: break-word;
 }
 
+.email {
+    background-color: rgb(200, 244, 255);
+    margin: 1%;
+    padding: 2%;
+    border-radius: 5%;
+    height: 75%;
+    overflow: hidden;
+    float: left;
+    width: 100%;
+    overflow-wrap: break-word;
+}
+
+.tags {
+    background-color: rgb(240, 179, 255);
+    margin: 1%;
+    padding: 2%;
+    border-radius: 5%;
+    height: 75%;
+    overflow: hidden;
+    float: left;
+    width: 100%;
+    overflow-wrap: break-word;
+}
+
+.tag {
+    background-color: rgb(161, 212, 241);
+    margin: 2%;
+    padding: 2%;
+    border-radius: 5%;
+    height: 75%;
+    overflow: hidden;
+    float: left;
+    width: 100px;
+    border-color: rgb(65, 65, 65);
+    border-style: solid;
+    border-radius: 1px;
+    overflow-wrap: break-word;
+}
 
 .modal {
     display: none; 
@@ -85,6 +135,11 @@
     color: white;
 }
   
+.myFloat {
+    width: 45%;
+    overflow: hidden;
+    float: left;
+}
  
 .modal-body {padding: 2px 16px;}
   
