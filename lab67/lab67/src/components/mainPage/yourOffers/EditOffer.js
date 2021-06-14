@@ -220,7 +220,7 @@ const EditOffer = (p) => {
                 <div className="add-edit-box">
                     <div className="input-group input-group-sm mb-3">
                         <div className="input-group-prepend">
-                            <span className="input-group-text" id="0">Auto:</span>
+                            <span className="input-group-text" id="0">Auto*:</span>
                         </div>
                         <input type="text" name="descSearch" value={auto} onChange={handleAuto} id="1" className="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"/>
                     </div>
